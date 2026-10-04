@@ -50,18 +50,7 @@ public class ModuloTierra extends Modulo {
    
 
     // Métodos de lógica del módulo
-    public boolean actividad(int energiaDisponible) {
-  
-        return false;
-    }
 
-    public int descargaDatos() {
-        return 0;
-    }
-
-    public int gastoEnergia() {
-        return 0;
-    }
     @Override
     public String procesarCiclo(CentroControl centroControl){
         
