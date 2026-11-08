@@ -19,7 +19,7 @@ public abstract class Dispositivo implements Comparable<Dispositivo>{
         this.consumoKWh = 0;
     }
 
-    public abstract double calcularConsumoHora(Sistema sistema);
+    public abstract void calcularConsumoHora();
 
     public void acumularConsumo(double consumo) {
         this.consumoKWh += consumo;

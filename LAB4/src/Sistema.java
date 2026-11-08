@@ -30,11 +30,15 @@ public class Sistema {
         registrarDispositivo(new Lumina(22, oficina1, 60));
         registrarDispositivo(new SensorHumo(23, oficina1, 20));
         registrarDispositivo(new Climatizador(24, oficina1, 150));
+        
 
         registrarDispositivo(new Camara(25, oficina2, 120));
         registrarDispositivo(new ClimatizadorInverter(26, oficina2, 180));
         registrarDispositivo(new Lumina(27, oficina2, 80));
+        registrarDispositivo(new Climatizador(10, oficina2, 150));
 
+
+        registrarDispositivo(new SensorHumo(20, oficina3, 20));
         registrarDispositivo(new Camara(28, oficina3, 25));
         registrarDispositivo(new Lumina(29, oficina3, 2012));
         registrarDispositivo(new ClimatizadorInverter(30, oficina3,200));
@@ -226,17 +230,23 @@ public class Sistema {
     public String avanzarHora() {
 
         double totalConsumo =  0;
+
+        if (horasEjecucion<24){
         
         for (Oficina o : oficinas) {
             for (Dispositivo d : o.getDispositivos()) {
-                totalConsumo = totalConsumo + d.getConsumoKWh();
+                d.calcularConsumoHora();
+                double consumo = d.getConsumoKWh();
+                totalConsumo = totalConsumo + consumo;
             }
         }
 
         horasEjecucion = horasEjecucion + 1;
-
         return "Se ha ejecutado una hora más ("+horasEjecucion+") y el consumo total es de" + totalConsumo;
 
+        }
+       
+        return "Ya se se completo un día";
 
 
        

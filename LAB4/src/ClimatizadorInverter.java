@@ -28,9 +28,12 @@ public class ClimatizadorInverter extends Climatizador {
         return "El nivel no es válido";
     }
 
+    
     // Cambia el cálculo del consumo
-    public double calcularConsumoHora(Sistema sistema) {
+    public void calcularConsumoHora() {
 
-       return (potenciaNominal * (0.30 + 0.70 * getNivel() / 100.0)) / 1000.0; // toma el metodo de climatizador
+        double consumoHora = (potenciaNominal * (0.30 + 0.70 * getNivel() / 100.0)) / 1000.0;
+
+        consumoKWh = consumoKWh +  consumoHora;
     }
 }

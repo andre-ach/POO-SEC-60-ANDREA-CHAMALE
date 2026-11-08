@@ -89,8 +89,11 @@ public class Climatizador extends Dispositivo
 
     // Dispositivo
     @Override
-    public double calcularConsumoHora(Sistema sistema) {
-        return ((0.30 + 0.70 * getNivel() / 100.0)) / 1000.0;
+    public void calcularConsumoHora() {
+
+        double consumoHora = ((0.30 + 0.70 * getNivel() / 100.0)) / 1000.0;
+
+        consumoKWh = consumoHora + consumoKWh;
     }
 
 

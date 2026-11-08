@@ -44,12 +44,10 @@ public class SensorHumo extends Dispositivo
 
     // Dispositivo
     @Override
-    public double calcularConsumoHora(Sistema sistema) {
+    public void calcularConsumoHora() {
 
         double consumoRonda = potenciaNominal / 1000;
         consumoKWh = consumoKWh + consumoRonda;
-        
-        return  consumoKWh;
     }
 
     @Override

@@ -49,11 +49,10 @@ public class Lumina extends Dispositivo implements InterRegulable, InterEstado {
 
     // Método abstracto heredado de Dispositivo
     @Override
-    public double calcularConsumoHora(Sistema sistema) {
+    public void calcularConsumoHora() {
         double cosumoRonda =(potenciaNominal* (0.30 + 0.70 * nivel / 100) )/(100);
 
         consumoKWh = consumoKWh + cosumoRonda;
-        return  consumoKWh;
     }
 
     // Mostrar información
